@@ -1,0 +1,55 @@
+
+@text: #EEEEEE;
+@grid: #888888;
+@player: #DDDDDD;
+@background: #111111;
+
+html, body {
+  height: 100%;
+  color: @text;
+  background-color: @background;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.container { height: 100%; }
+
+.header { text-align: center; }
+
+.banner { font-size: 30px; }
+
+.title { font-size: 20px; }
+
+.score {
+  width: 40%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.game {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectors, .results {
+  font-size: 20px;
+  display: none;
+  text-align: center;
+}
+
+table { border-collapse: collapse; }
+
+td + td { border-left: 1px solid @grid; }
+tr + tr { border-top: 1px solid @grid; }
+td {
+  color: @player;
+  font-size: 40px;
+  text-align: center;
+  width: 85px;
+  height: 85px;
+  padding: 15px;
+}
