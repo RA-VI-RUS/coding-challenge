@@ -1,0 +1,178 @@
+:root {
+  --main-color: cornflowerblue;
+  --main-contrast-color: darkorange;
+  --secondary-color: white;
+  --main-text-color: darkslategray;
+  --secondary-text-color: lightsteelblue;
+  --script-form: whitesmoke;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui;
+  font-weight: 200;
+  color:  var(--main-text-color); 
+}
+
+#root {
+  height: 100%;
+}
+
+.app {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr 3rem 1fr 1fr 3rem;
+  grid-template-areas:
+    "e e e e i d"
+    "e e e e i d"
+    "e e e e i d"
+    "v v v v o d"
+    "v v v v o d"
+    "p p p p o d"
+}
+
+.app h3 {
+  margin: 0 0 10px 0;
+}
+
+
+.input-buffer {
+  grid-area: i;
+  padding: 10px 10px;
+}
+
+.input-buffer textarea {
+  width: 100%;
+  height: 90%;
+  padding: 0;
+  margin: 0;
+  border-style: none;
+  resize: none;  
+}
+
+.output-buffer {
+  grid-area: o;
+  padding: 10px 10px;
+  background: var(--script-form);
+}
+
+.script-editor {
+  grid-area: e;
+  padding: 10px 10px;
+  background: var(--script-form);
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr 3rem;
+  grid-template-areas:
+    "f f f f"
+    "f f f f"
+    "s s s s"
+}
+
+.script-form {
+  grid-area: f;
+}
+
+.script-form textarea {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-style: none;
+  resize: none;
+  background: var(--script-form);
+}
+
+.script-form textarea:focus {
+  outline-width: 0;
+}
+
+.script-form textarea::placeholder {
+  color: var(--main-text-color);
+}
+
+.script-submit {
+  grid-area: s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.script-submit input {
+  background: var(--main-color);
+  border: none;
+  color: var(--main-text-color);
+  width: 8rem;
+  height: 2rem;
+}
+
+.script-viewer {
+  grid-area: v;
+  padding: 10px 10px;
+  border-style: none;
+}
+
+.script-viewer .current {
+  font-weight: bold;
+  background: black;
+  color: red;
+}
+
+.program-counter {
+  grid-area: p;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.program-counter .iPtr {
+  width: 12rem;
+}
+
+.program-counter button {
+  background: var(--main-color);
+  border: none;
+  color: var(--main-text-color);
+  line-height: 1.2rem;
+  width: 6rem;
+}
+
+.data-viewer {
+  grid-area: d;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  background-color: var(--main-color);
+}
+
+.data-viewer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.data-viewer .data .data-index {
+  background-color: var(--main-contrast-color);
+  display: inline-block;
+  min-width: 2rem;
+  text-align: right;
+  padding-right: 0.2rem;
+}
+
+.data-viewer .data .data-item {
+  display: inline-block;
+  min-width: 2rem;
+  text-align: right;
+  padding-right: 0.2rem;
+}
+
+.data-index.bold, .data-item.bold {
+  font-weight: bold;
+}
